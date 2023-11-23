@@ -76,6 +76,7 @@ body {
   z-index: 1;
 }
 
+
 ol {
   font-size: 20px;
   padding-inline-start: 20px;
@@ -435,6 +436,8 @@ text-align: left;
 .headline-skinny{
   padding: 0 45px;
 }
+
+
 
 @media (max-width: 1000px) {
 
