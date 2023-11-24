@@ -131,7 +131,12 @@ input {
 .hero {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 }
+
 
 .btn {
   display: inline-block;
@@ -319,4 +324,31 @@ svg.icon path{
 .ignite{
   gap: 20px;
   color: var(--medium-color);
+}
+
+.faq {
+  display: flex;
+  border-bottom: 3px solid var(--dark-color);
+  margin: 25px 30px;
+  padding-bottom: 40px;
+  width: calc(100vw - 60px);
+  max-width: calc(1200px - 60px);
+}
+
+.faq-left{
+  width: calc(100% - 30px);
+  text-align: left;
+}
+
+.faq img{
+  width: 30px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.answer{
+  display: none;
 }
