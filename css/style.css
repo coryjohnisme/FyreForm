@@ -179,12 +179,17 @@ input {
   flex-direction: row;
   align-items: center;
   gap: 20px;
+  justify-content: center;
 }
 svg.icon {
   stroke: var(--medium-color);
   stroke-width: 3px;
   width: 80px;
   height: 80px;
+  display: flex;
+}
+svg.icon path{
+
 }
 
 .service-description {
@@ -192,6 +197,8 @@ svg.icon {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
+  width: calc((100% - 80px) - 30px);
+  text-align: left;
 }
 
 .why-choose {
@@ -311,4 +318,5 @@ svg.icon {
 
 .ignite{
   gap: 20px;
+  color: var(--medium-color);
 }
