@@ -205,7 +205,7 @@
                     <p>Free tips, tricks, and downloads for joining our mailing list.</p>
                     <div class="bar"></div>
                     <div id="successMessage" style="display: none;">
-                        <p>Success! Check your inbox for goodies.</p>
+                        <h2>Success! Check your inbox for goodies.</h2>
                     </div>
                     <form action="https://script.google.com/macros/s/AKfycbzUEAaTlEHCEXMdPi7udjLRmF1MHgfDfeE79He8Ryi_uT86xYmO8KfdZVW5TbCmAp3w/exec" method="POST">
                         <label for="name">Name</label>
@@ -353,25 +353,36 @@
     <script src="js/script.js"></script>
     <script>
         function submitForm() {
-          var form = document.querySelector("#memberPlans form");
-          var successMessage = document.getElementById("successMessage");
-      
-          // Make an asynchronous request to the form action URL
-          fetch(form.action, {
-            method: form.method,
-            body: new FormData(form),
-          })
+            var form = document.querySelector("#memberPlans form");
+            var successMessage = document.getElementById("successMessage");
+            var emailField = document.getElementById("email");
+    
+            // Email validation regex
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+            // Check if the email is in a valid format
+            if (!emailRegex.test(emailField.value)) {
+                // If not, turn the email field red
+                emailField.style.borderColor = "#FFE1DB";
+                return; // Stop the form submission
+            }
+    
+            // Make an asynchronous request to the form action URL
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+            })
             .then(response => response.text())
             .then(data => {
-              // Hide the form
-              form.style.display = "none";
-              // Display the success message
-              successMessage.style.display = "block";
+                // Hide the form
+                form.style.display = "none";
+                // Display the success message
+                successMessage.style.display = "block";
             })
             .catch(error => console.error('Error:', error));
         }
-      </script>
-      <script>
+    </script>
+    <script>
         document.getElementById('submitButton').addEventListener('click', submitForm);
     </script>
 </body>
