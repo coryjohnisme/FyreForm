@@ -212,7 +212,7 @@
                         <input type="text" id="name" name="name">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email">
-                        <button class="btn" type="submit" onclick="submitForm()">Claim Your Download</button>
+                        <button class="btn" type="button" id="submitButton">Claim Your Download</button>
                     </form>
                     <p>Join our mailing list for free tips and tricks starting with a social media marketing kit (with
                         assets!)
@@ -371,6 +371,9 @@
             .catch(error => console.error('Error:', error));
         }
       </script>
+      <script>
+        document.getElementById('submitButton').addEventListener('click', submitForm);
+    </script>
 </body>
 
 </html>
