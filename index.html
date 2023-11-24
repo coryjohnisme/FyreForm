@@ -356,14 +356,22 @@
             var form = document.querySelector("#memberPlans form");
             var successMessage = document.getElementById("successMessage");
             var emailField = document.getElementById("email");
+            var nameField = document.getElementById("name");
     
             // Email validation regex
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
             // Check if the email is in a valid format
             if (!emailRegex.test(emailField.value)) {
-                // If not, turn the email field red
+                // If not, turn the email field background color to #FFE1DB
                 emailField.style.backgroundColor = "#FFE1DB";
+                return; // Stop the form submission
+            }
+    
+            // Check if the name is empty
+            if (nameField.value.trim() === "") {
+                // If empty, turn the name field background color to #FFE1DB
+                nameField.style.backgroundColor = "#FFE1DB";
                 return; // Stop the form submission
             }
     
@@ -382,6 +390,7 @@
             .catch(error => console.error('Error:', error));
         }
     </script>
+    
     <script>
         document.getElementById('submitButton').addEventListener('click', submitForm);
     </script>
