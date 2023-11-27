@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@100,300;100,800;125,200;125,800&display=swap');
+    </style>
+    <title>FyreForm - Get Started</title>
+</head>
+
+<body>
+    <div class="flex-container vintage-look">
+        <div class="block">
+            <a href="../index.html"><img class="logo" src="../img/fyreform-logo.svg"></a>
+            <h1>Lets Ignite Your Brand with <span id="header"></span>!</h1>
+            <p>Unlock the power of FyreForm's creative marketing solutions. Complete the form below to kickstart your
+                journey to a more vibrant and successful brand.</p>
+            <!-- Add other content for the get-started page here -->
+        </div>
+    </div>
+    <div class="flex-container tertiary-accent">
+        <div class="block">
+            <div class="sign-up">
+                <form action="YOUR_FORM_ACTION_URL" method="POST" onsubmit="return validateForm()">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <label for="business">Business</label>
+                    <input type="text" id="business" name="business">
+                    <button class="btn" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve the stored plan name from session storage
+        var selectedPlan = sessionStorage.getItem('selectedPlan');
+
+        // Set the header text based on the plan name
+        document.getElementById('header').innerText = selectedPlan;
+    </script>
+
+</body>
+
+</html>

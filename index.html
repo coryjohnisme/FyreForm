@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="flex-container">
+    <div class="flex-container vintage-look">
         <div class="block">
           <div class="hero">
             <img class="logo" src="img/fyreform-logo.svg">
@@ -28,7 +28,7 @@
     </div>
       
       
-    <div class="flex-container alt-background">
+    <div class="flex-container background-section">
         <div class="block">
             <div class="box">
                 <p>At FyreForm, we understand that your business is more than just products and services – it's a story waiting to be told. Our passion lies in crafting memorable experiences for your brand, making it stand out in the local market.</p>
@@ -226,7 +226,7 @@
                     <div class="bar"></div>
                     <p class="price">$4,999/mo</p>
                     <p>Pause or cancel anytime</p>
-                    <button class="btn" type="button">Get Started</button>
+                    <button class="btn" type="button" onclick="getStarted('FyrePower')">Get Started</button>
                     <p>What you see is what you get:<br>One project at a time<br>Most tasks done in 2 days<br>2 “skip
                         the
                         line”
@@ -239,9 +239,9 @@
                     <h2>FyreStarter</h2>
                     <p>Business jump start. A good way to get things off the ground</p>
                     <div class="bar"></div>
-                    <p class="price">$999</p>
+                    <p class="price">$2,999</p>
                     <p>One time fee</p>
-                    <button class="btn" type="button">Get Started</button>
+                    <button class="btn" type="button" onclick="getStarted('FyreStarter')">Get Started</button>
                     <p>What you see is what you get:<br>One logo suite<br>A branding package with guidelines<br>Setup a
                         social
                         media account<br>Full ownership of all custom work<br>Licenses for fonts and stock
@@ -395,6 +395,13 @@
     <script>
         document.getElementById('submitButton').addEventListener('click', submitForm);
     </script>
+
+<script>
+    function getStarted(planName) {
+        sessionStorage.setItem('selectedPlan', planName);
+        window.location.href = '/get-started/index.html';
+    }
+</script>
 </body>
 
 </html>
