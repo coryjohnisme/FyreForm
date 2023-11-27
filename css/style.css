@@ -381,6 +381,7 @@ svg.icon {
 .footer{
   background-color: var(--medium-color);
   color: var(--light-color);
+  text-align: left;
 }
 
 .footer .block{
