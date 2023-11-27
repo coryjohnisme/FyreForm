@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="flex-container tertiary-accent">
-        <div class="block">
+        <div class="block sign-up-page">
             <div class="sign-up">
                 <form action="YOUR_FORM_ACTION_URL" method="POST" onsubmit="return validateForm()">
                     <label for="name">Name</label>
@@ -45,11 +45,16 @@
     </div>
 
     <script>
-        // Retrieve the stored plan name from session storage
+        // Retrieve the stored plan name and modified plan card HTML from session storage
         var selectedPlan = sessionStorage.getItem('selectedPlan');
-
+        var modifiedPlanCardHTML = sessionStorage.getItem('selectedPlanCardHTML');
+    
         // Set the header text based on the plan name
         document.getElementById('header').innerText = selectedPlan;
+    
+        // Display the modified plan card HTML above the form
+        var formContainer = document.querySelector('.flex-container.tertiary-accent .block .sign-up');
+        formContainer.insertAdjacentHTML('beforebegin', modifiedPlanCardHTML);
     </script>
 
 </body>

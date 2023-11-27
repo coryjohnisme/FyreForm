@@ -7,11 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth',
-          timingFunction: 'cubic-bezier(0.42, 0, 0.58, 1)'
-        });
+        if (this.classList.contains('btn')) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        } else {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth',
+            timingFunction: 'cubic-bezier(0.42, 0, 0.58, 1)'
+          });
+        }
       }
     });
   });
