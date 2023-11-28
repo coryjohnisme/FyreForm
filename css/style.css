@@ -515,6 +515,21 @@ svg.icon {
   }
 }
 
+@media (max-width: 600px) {
+  .case {
+    width: 50vw;
+  }
+
+  @keyframes scrollAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+}
+
 @media (max-width: 500px) {
   .plan-card {
     width: 100%;
