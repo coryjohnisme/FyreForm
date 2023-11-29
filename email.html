@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FyreForm</title>
+    <style>
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #F8F4EF;
+            color: #353F68;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: lighter;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1, h2{
+            font-weight: bold;
+            font-size: 35px;
+        }
+        p{
+            line-height: 1.4;
+            padding-bottom: 30px;
+        }
+        .logo-box{
+            width: 100%;
+            background-color: #353F68;
+            display: flex;
+            justify-content: center
+        }
+        .logo{
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+        .logo img{
+            height: 30px;
+        }
+        .header{
+            padding: 60px 30px 0px;
+            max-width: 800px;
+        }
+        .btn{
+            display: flex;
+            width: 100%;
+            margin: 0 0 30px;
+            padding: 17px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 20px;
+            background-color: #FFC23D;
+            color: #FFFFFF;
+            text-decoration: none;
+            justify-content: center;
+            box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.10);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(2px);
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+        }
+        .plans{
+            padding: 0 30px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 800px;
+        }
+        .cta{
+            font-weight: bold;
+            width: 100%;
+            padding-top: 30px;
+        }
+        .plan{
+            padding: 50px 30px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            min-width: 250px;
+            flex-grow: 1;
+            width: calc(50% - (30px / 2));
+        }
+        .main{
+            background-color: #FFC23D;
+            color: #353F68;
+        }
+        .bar {
+            border-bottom: solid 3px;
+            margin: 0 0 30px;
+        }
+        .main .bar{
+            border-color: #353F68;
+        }
+        .plan .btn{
+            background-color: #353F68;
+        }
+        .secondary{
+            background-color: #DB523B;
+            color: #FFFFFF;
+        }
+        .sign{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 60px 0;
+        }
+        .sign p{
+            padding-bottom: 0;
+        }
+        .bolder{
+            font-weight: bold;
+        }
+        .unsubscribe{
+            padding-bottom: 60px;
+            background-color: #353F68;
+            width: 100%;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .unsubscribe a{
+            color: #FFC23D;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="logo-box">
+        <div class="logo">
+            <img src="https://fyreform.com/img/fyreform-logo-alt.svg">
+        </div>
+    </div>
+    <div class="header">
+        <h1>Hello!</h1>
+        <p>Welcome to Fyre Form! Exciting times are ahead, and we're here to help your business shine.</p>
+        <p>As a thank-you gift, grab our Social Media Posting Calendar Template and editable PDFs. These tools will elevate your content game.</p>
+        <a href="https://fyreform.com" class="btn">Download Now</a>
+    </div>
+    <div class="plans">
+        <div class="cta">Ready to take things up a notch? Check out our membership plans:</div>
+        <div class="plan main">
+            <h2>FyrePower</h2>
+            <p>Your Marketing Companion</p>
+            <div class="bar"></div>
+            <p>Get a dedicated team for new specials, social media setup, and graphic design magic.</p>
+            <a href="https://fyreform.com" class="btn">Download Now</a>
+        </div>
+        <div class="plan secondary">
+            <h2>FyreStarter</h2>
+            <p>Graphic Design Simplified</p>
+            <div class="bar"></div>
+            <p>Unlock a professional logo, branding package, and unlimited graphic design requests.</p>
+            <a href="https://fyreform.com" class="btn">Download Now</a>
+        </div>
+    </div>
+    <div class="sign">
+        <p>Questions or need a spark of inspiration?</p>
+        <p>Reach out to us at hello@fyreform.com</p>
+        <br>
+        <p class="bolder">All the best,</p>
+        <p>C.J. Ehrenberg</p>
+        <p>Fyre Form | Design</p>
+    </div>
+    <div class="unsubscribe">
+        <a href="mailto:ehrenberg.cory@gmail.com?subject=Fyre%20Form%20|%20Unsubscribe&body=Hey%20CJ,%0ACan%20you%20please%20remove%20me%20from%20the%20Fyre%20Form%20mailing%20list?%0AThanks!">Unsubscribe</a>
+    </div>
+</body>
+
+</html>

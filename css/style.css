@@ -350,6 +350,7 @@ svg.icon {
   padding-bottom: 40px;
   width: calc(100vw - 60px);
   max-width: calc(1200px - 60px);
+  flex-grow: 1;
 }
 
 .faq-left{
