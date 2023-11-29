@@ -519,13 +519,16 @@ svg.icon {
   .case {
     width: 50vw;
   }
+  .cases {
+    animation: scrollAnimation 35s linear infinite;
+  }
 
   @keyframes scrollAnimation {
     0% {
       transform: translateX(0);
     }
     50% {
-      transform: translateX(-100%);
+      transform: translateX(-300%);
     }
     100% {
       transform: translateX(0);
