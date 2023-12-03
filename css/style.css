@@ -499,6 +499,37 @@ svg.icon {
   padding-left: 15px;
 }
 
+.right-block{
+  width: 100%;
+  text-align: right;
+  flex-direction: row;
+  max-width: 1120px;
+  justify-content: flex-end;
+  margin: 3px;
+  margin-bottom: 0;
+}
+.nav{
+  padding-left: 30px;
+  font-size: 14px;
+  font-weight: 800;
+  font-stretch: 125%;
+  color: var(--medium-color);
+  line-height: 1;
+  padding-bottom: 3px;
+}
+.nav a{
+  text-decoration: none;
+  color: var(--medium-color);
+}
+.nav a:hover{
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 8px;
+}
+
+.no-top-margin{
+  margin-top: 0;
+}
+
 
 @keyframes scrollAnimation {
   0% {
