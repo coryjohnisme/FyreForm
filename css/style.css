@@ -508,6 +508,7 @@ svg.icon {
   margin: 3px;
   margin-bottom: 0;
   padding-right: 25px;
+  display: none;
 }
 .nav{
   padding-left: 30px;
