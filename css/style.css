@@ -503,10 +503,11 @@ svg.icon {
   width: 100%;
   text-align: right;
   flex-direction: row;
-  max-width: 1120px;
+  max-width: 1095px;
   justify-content: flex-end;
   margin: 3px;
   margin-bottom: 0;
+  padding-right: 25px;
 }
 .nav{
   padding-left: 30px;
@@ -516,6 +517,7 @@ svg.icon {
   color: var(--medium-color);
   line-height: 1;
   padding-bottom: 3px;
+  
 }
 .nav a{
   text-decoration: none;
