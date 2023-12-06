@@ -251,22 +251,28 @@
         <div class="block">
             <div class="membership" id="memberPlans">
                 <h2>Membership Plans</h2>
-
                 <div class="plan-card tertiary-accent">
                     <h2>FreeFyre</h2>
-                    <p>Free tips, tricks, and downloads for joining our mailing list.</p>
+                    <p>Free tips, tricks, and downloads for signing up for our Newsletter.</p>
                     <div class="bar"></div>
                     <div id="successMessage" style="display: none;">
                         <h2>Success! Check your inbox for goodies.</h2>
                     </div>
-                    <form action="https://script.google.com/macros/s/AKfycbyVlPM6WpGpZBANpUP7_gLlaqxmjmhoH887L0EYIg7GLMdUrv22vrIPd91anVnkK4vcFQ/exec" method="POST">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name">
+                    <form method="post" action="https://systeme.io/embedded/12868201/subscription" id="newForm">
+                        <label for="name">First Name</label>
+                        <input type="text" name="first_name" />
+                        <label for="name">Last Name</label>
+                        <input type="text" name="surname" />
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email">
-                        <button class="btn" type="button" id="submitButton">Claim Your Download</button>
+                        <input type="text" name="email" />
+                        <div class="f-row" style="width:100%;">
+                            <button type="submit" class="btn" id="submitButton" style="display:none;">Claim Your Download</button>
+                            <div class="btn" id="disableButton" style="display:block;">All Fields Required</div>
+                        </div>
                     </form>
-                    <p>Join our mailing list for free tips and tricks starting with a social media marketing kit (with assets!)
+                    
+                    
+                    <p>Join our Newsletter for free tips and tricks starting with a social media marketing kit (with assets!)
                     </p>
                 </div>
 
@@ -423,45 +429,10 @@
     </div>
       
     <script src="js/script.js"></script>
-    <script>
-        function submitForm() {
-            var form = document.querySelector("#memberPlans form");
-            var successMessage = document.getElementById("successMessage");
-            var emailField = document.getElementById("email");
-            var nameField = document.getElementById("name");
+
     
-            // Email validation regex
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     
-            // Check if the email is in a valid format
-            if (!emailRegex.test(emailField.value)) {
-                // If not, turn the email field background color to #FFE1DB
-                emailField.style.backgroundColor = "#FFE1DB";
-                return; // Stop the form submission
-            }
-    
-            // Check if the name is empty
-            if (nameField.value.trim() === "") {
-                // If empty, turn the name field background color to #FFE1DB
-                nameField.style.backgroundColor = "#FFE1DB";
-                return; // Stop the form submission
-            }
-    
-            // Make an asynchronous request to the form action URL
-            fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-            })
-            .then(response => response.text())
-            .then(data => {
-                // Hide the form
-                form.style.display = "none";
-                // Display the success message
-                successMessage.style.display = "block";
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
     
     <script>
         document.getElementById('submitButton').addEventListener('click', submitForm);
@@ -507,6 +478,104 @@
     // JavaScript to set the current year in the copyright statement
     document.getElementById("copyright").innerHTML = "Copyright © " + new Date().getFullYear() + " Fyre Form. All Rights Reserved.";
 </script>
+
+<script>
+    // Function to parse URL parameters
+    function getUrlParameter(name) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Check for URL parameters and adjust the page accordingly
+    document.addEventListener('DOMContentLoaded', function () {
+        var successMessageParam = getUrlParameter('successMessage');
+        var newFormParam = getUrlParameter('newForm');
+
+        if (successMessageParam === 'display:flex;') {
+            // Show the success message
+            document.getElementById('successMessage').style.display = 'flex';
+        }
+
+        if (newFormParam === 'display:none;') {
+            // Hide the form
+            document.getElementById('newForm').style.display = 'none';
+        }
+    });
+</script>
+
+<script>
+    // Function to parse URL parameters
+    function getUrlParameter(name) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Check for URL parameters and adjust the page accordingly
+    document.addEventListener('DOMContentLoaded', function () {
+        var successMessageParam = getUrlParameter('successMessage');
+        var newFormParam = getUrlParameter('newForm');
+
+        if (successMessageParam === 'display:flex;') {
+            // Show the success message
+            document.getElementById('successMessage').style.display = 'flex';
+        }
+
+        if (newFormParam === 'display:none;') {
+            // Hide the form
+            document.getElementById('newForm').style.display = 'none';
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('newForm').addEventListener('submit', function (event) {
+        if (!validateForm()) {
+            event.preventDefault(); // Prevent the form from submitting if validation fails
+        }
+    });
+
+    // Function to validate the form fields
+    function validateForm() {
+        var firstName = document.querySelector('input[name="first_name"]').value;
+        var lastName = document.querySelector('input[name="surname"]').value;
+        var email = document.querySelector('input[name="email"]').value;
+
+        // Check if first name, last name, and email are not blank and email is in the correct format
+        if (firstName.trim() !== '' && lastName.trim() !== '' && validateEmail(email)) {
+            // Enable the submit button and disable the disable button
+            document.getElementById('submitButton').style.display = 'block';
+            document.getElementById('disableButton').style.display = 'none';
+            return true; // Allow form submission
+        } else {
+            // Disable the submit button and enable the disable button
+            document.getElementById('submitButton').style.display = 'none';
+            document.getElementById('disableButton').style.display = 'block';
+            return false; // Prevent form submission
+        }
+    }
+
+    // Function to validate email format
+    function validateEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Event listener to validate the form on input change
+    document.querySelectorAll('input[name="first_name"], input[name="surname"], input[name="email"]').forEach(function (input) {
+        input.addEventListener('input', validateForm);
+    });
+</script>
+
+
+
 
 </body>
 

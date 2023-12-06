@@ -40,6 +40,14 @@ select {
   background: none;
 }
 
+input {
+  outline: none;
+}
+
+#newForm input {
+  background: var(--white-color); /* or set it to any color you prefer */
+}
+
 .block {
   display: flex;
   max-width: 1200px;
@@ -121,7 +129,7 @@ label {
   border-radius: 20px;
   margin-bottom: 20px;
   background-color: var(--white-color);
-  width: 80px;
+  width: 90px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 0;
@@ -137,7 +145,7 @@ input {
   border: 2px solid #D9D9D9;
   border-radius: 20px;
   margin-bottom: 20px;
-  width: calc(100% - 80px);
+  width: calc(100% - 90px);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left: 0;
@@ -164,6 +172,7 @@ input {
   padding: 17px;
   margin: 30px;
   font-weight: 800;
+  height: 55px;
   font-size: 14px;
   font-stretch: 125%;
   border-radius: 20px;
@@ -179,6 +188,17 @@ input {
 .btn:hover {
   transform: translateY(2px);
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+}
+
+#disableButton{
+  opacity:30%;
+  box-shadow: none;
+  transition: none;
+}
+
+#disableButton:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .box {
@@ -533,6 +553,12 @@ svg.icon {
   margin-top: 0;
 }
 
+.cases a {
+  height: 120px;
+}
+
+
+
 
 @keyframes scrollAnimation {
   0% {
@@ -542,11 +568,6 @@ svg.icon {
     transform: translateX(-100%);
   }
 }
-
-.cases a {
-  height: 120px;
-}
-
 
 @media (max-width: 800px) {
   .sign-up-page {
