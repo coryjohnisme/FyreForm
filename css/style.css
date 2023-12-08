@@ -519,38 +519,34 @@ svg.icon {
   padding-left: 15px;
 }
 
-.right-block{
+.nav-bar{
   width: 100%;
   text-align: right;
   flex-direction: row;
-  max-width: 1095px;
-  justify-content: flex-end;
-  margin: 3px;
-  margin-bottom: 0;
-  padding-right: 25px;
-  display: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 15px 15px;
+  background-color: var(--medium-color);
+  color: var(--accent-color);
 }
 .nav{
-  padding-left: 30px;
   font-size: 14px;
   font-weight: 800;
   font-stretch: 125%;
-  color: var(--medium-color);
+  color: var(--accent-color);
   line-height: 1;
   padding-bottom: 3px;
   
 }
 .nav a{
   text-decoration: none;
-  color: var(--medium-color);
+  color: var(--accent-color);
 }
 .nav a:hover{
-  border-bottom: 3px solid var(--accent-color);
+  border-bottom: 3px solid var(--white-color);
+  color: var(--white-color);
   padding-bottom: 8px;
-}
-
-.no-top-margin{
-  margin-top: 0;
 }
 
 .cases a {

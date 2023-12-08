@@ -39,21 +39,21 @@
     <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#353F68">
   
-    <meta name="keywords" content="Fyre Form, small business, marketing plans, Google Maps, design services">
+    <meta name="keywords" content="Fyre Form, small business, marketing plans, Google Maps, design services, wellington, florida, palm beach, south florida">
     <meta name="author" content="Fyre Form">
 </head>
 
 <body>
+    <div class="nav-bar">
+        <div class="nav"><a href="#">Home</a></div>
+        <div class="nav"><a href="https://blog.fyreform.com">Blog</a></div>
+    </div>
     <div class="flex-container vintage-look with-cases">
-        <div class="block right-block">
-            <div class="nav"><a href="#">Home</a></div>
-            <div class="nav"><a href="https://blog.fyreform.com">Blog</a></div>
-        </div>
-        <div class="block no-top-margin">
+        <div class="block">
           <div class="hero">
             <img class="logo" src="img/fyreform-logo.svg">
             <h1>
-              Your Local Marketing Partner.
+                Wellington’s Premiere Marketing Partner
             </h1>
             <p>Elevate Your Business with FyreForm's Creative Solutions</p>
             <a href="#memberPlans" class="btn">See Plans</a>
@@ -72,7 +72,6 @@
                 <a href="/case-study/CaseStudy-LBA.pdf" target="_blank" class="case-link"><img class="svg-logo" src="img/case/lifebank.svg"><img class="case" src="img/case/case-lba.jpg"></a>
                 <a href="/case-study/CaseStudy-CC.pdf" target="_blank" class="case-link"><img class="svg-logo" src="img/case/candid.svg"><img class="case" src="img/case/case-cc.jpg"></a>
               <!-- Duplicate the images for infinite loop -->
-
             </div>
           </div>
           
@@ -282,8 +281,14 @@
                     <div class="bar"></div>
                     <p class="price">$4,999/mo</p>
                     <p>Pause or cancel anytime</p>
-                    <button class="btn">Coming Soon</button>
-                    <!-- <button class="btn" type="button" onclick="getStarted('FyrePower', this.parentElement.outerHTML)">Get Started</button> -->
+                    <form id="paypalForm1" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="T54ZDGCTUFTKJ" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <button class="btn" onclick="submitPaypalForm('paypalForm1')">Get Started</button>
+                    </form>
+                    
+                    
                     <p>What you see is what you get:</p>
                     <ul>
                         <li>Tailored monthly marketing strategy</li>
@@ -302,8 +307,14 @@
                     <div class="bar"></div>
                     <p class="price">$2,999</p>
                     <p>One time fee</p>
-                    <button class="btn">Coming Soon</button>
-                    <!-- <button class="btn" type="button" onclick="getStarted('FyreStarter', this.parentElement.outerHTML)">Get Started</button> -->
+                    <!-- <button class="btn">Coming Soon</button> -->
+                    <form id="paypalForm2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="459TNE6J6TKCQ" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <button class="btn" onclick="submitPaypalForm('paypalForm2')">Get Started</button>
+                    </form>
+                    
                     <p>What you see is what you get:</p>
                     <ul>
                         <li>One logo suite</li>
@@ -574,7 +585,11 @@
     });
 </script>
 
-
+<script>
+    function submitPaypalForm(formId) {
+        document.getElementById(formId).submit();
+    }
+</script>
 
 
 </body>
