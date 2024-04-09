@@ -1,8 +1,8 @@
 /* Define color variables */
 :root {
-    --main-color: #FF8D82;
+    --main-color: #6f1f4a;
     --light-color: #ffffff;
-    --accent-color: #693A24;
+    --accent-color: #f5b15e;
 }
 
 *{
@@ -118,7 +118,7 @@ h3{
     justify-content: space-between;
 }
 .logo img {
-    height: 90px;
+    height: 60px;
     width: auto;
 }
 
@@ -422,7 +422,7 @@ form textarea:focus {
 }
 
 .footer img{
-    height: 90px;
+    height: 60px;
     width: auto;
 }
 
